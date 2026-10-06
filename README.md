@@ -4,7 +4,7 @@
 
 Applied Learning Project, MBA Semester 3 (Data Science & Analytics), Jain Deemed-to-be-University, 2026.
 
-**[View the Tableau dashboards](ADD-TABLEAU-PUBLIC-LINK)** | **[Read the full report (PDF)](report/ADD-REPORT-FILENAME.pdf)**
+**[Download the Tableau workbook (.twbx)](https://github.com/meshamanthadiga004/smartphone-market-analytics/blob/main/tableau/Tableau%20Workbook.twbx)** | **[Read the full report (PDF)](https://github.com/meshamanthadiga004/smartphone-market-analytics/blob/main/report/DSA_Business_Report.pdf)**
 
 ![Customer Insights Centre dashboard](tableau/customer_insights_centre.png)
 
@@ -58,10 +58,10 @@ Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn), Jupyter Notebook, Tableau De
 
 ## Reproducing the analysis
 
-1. Place your own `cellphone_data.csv` in `data/`, using the schema in `data/README.md`.
+1. Place your own `cellphone_data.csv` in `notebooks/` (the notebook reads it from that folder), using the schema in `data/README.md`.
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the notebook: `jupyter notebook notebooks/`
-4. Open `tableau/smartphone_market_analytics.twbx` in Tableau Desktop or Tableau Public.
+4. Open `tableau/Tableau Workbook.twbx` in Tableau Desktop or Tableau Public.
 
 ## Status
 
