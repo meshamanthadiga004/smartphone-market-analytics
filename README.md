@@ -6,7 +6,9 @@ Applied Learning Project, MBA Semester 3 (Data Science & Analytics), Jain Deemed
 
 **[View the Tableau dashboards](ADD-TABLEAU-PUBLIC-LINK)** | **[Read the full report (PDF)](report/ADD-REPORT-FILENAME.pdf)**
 
-![Dashboard preview](tableau/ADD-SCREENSHOT-1.png)
+![Customer Insights Centre dashboard](tableau/customer_insights_centre.png)
+
+![Market Intelligence Hub dashboard](tableau/market_intelligence_hub.png)
 
 ## Business question
 
