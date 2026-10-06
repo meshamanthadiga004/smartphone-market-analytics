@@ -1,41 +1,75 @@
 # Smartphone Market Analytics
 
-Applied Learning Project, MBA Semester 3 (Data Science & Analytics), Jain Online.
+**Statistical analysis in Python + interactive dashboards in Tableau**
 
-## What this is
+Applied Learning Project, MBA Semester 3 (Data Science & Analytics), Jain Deemed-to-be-University, 2026.
 
-A retailer ("Saap" in the case brief) wants to know what actually drives smartphone pricing, adoption, and customer satisfaction: device specs, or who's buying. This project answers that with a two-stage analysis: statistical testing in Python, then an interactive Tableau workbook built on the same findings.
+**[View the Tableau dashboards](ADD-TABLEAU-PUBLIC-LINK)** | **[Read the full report (PDF)](report/ADD-REPORT-FILENAME.pdf)**
 
-The underlying dataset (990 records, 22 variables: device specs plus buyer demographics) was provided as part of the coursework and isn't included in this repo, since it isn't mine to redistribute. The notebook and Tableau workbook both expect a cellphone_data.csv in data/ with the same schema if you want to rerun the analysis.
+![Dashboard preview](tableau/ADD-SCREENSHOT-1.png)
+
+## Business question
+
+A retailer ("Saap" in the case brief) wants to know what drives smartphone pricing, adoption and customer satisfaction: device specifications, or who is buying. This project answers that in two stages: hypothesis testing in Python, then a Tableau workbook built on the same findings.
+
+## Dataset
+
+990 records and 22 variables covering device specifications and buyer demographics. The data was provided as part of the coursework and is not included in this repository because it is not mine to redistribute. See [`data/README.md`](data/README.md) for the full data dictionary.
+
+## Approach
+
+1. **Cleaning and validation:** checked types, missing values, duplicates and inconsistent categories (Pandas, NumPy).
+2. **Exploratory analysis:** distributions and relationships across product, pricing and demographic variables (Matplotlib, Seaborn).
+3. **Hypothesis testing:** 18 tests (t-tests, ANOVA, chi-square) at a 95% confidence level (SciPy).
+4. **Visualisation and reporting:** a Tableau workbook (2 dashboards, 15 worksheets, 12-point storyboard) and a 27-page report with business recommendations.
 
 ## Key findings
 
-Finding 1: Brand, not specs, drives price. ANOVA across brands: F = 105.69, p < 0.001.
+| # | Finding | Evidence |
+|---|---------|----------|
+| 1 | Brand is strongly associated with price. | ANOVA across brands: F = 105.69, p < 0.001 |
+| 2 | OS separates the hardware tier. iOS and Android differ clearly on RAM and screen size, and brand and OS are closely linked. | RAM: F = 143.92. Screen size: F = 389.85. Brand vs OS chi-square: χ² ≈ 990, p < 0.001 |
+| 3 | Demographics (age, gender, occupation) showed no significant effect on price category, brand or OS preference. | Not significant at the 95% level |
+| 4 | Regional income differs. Mumbai salaries are significantly higher than Delhi's, which matches premium-tier representation by city. | p = 0.00024 |
 
-Finding 2: OS defines the hardware tier. iOS and Android split cleanly on RAM (F = 143.92) and screen size (F = 389.85); brand and OS are effectively the same variable (chi-square, approx 990, p < 0.001).
+**Business implication:** in this dataset, broad demographic targeting does not hold up, while specification- and brand-based targeting does.
 
-Finding 3: Demographics don't predict device choice. Age, gender, and occupation showed no significant effect on price category, brand, or OS preference. Broad demographic targeting doesn't hold up here; specification-based targeting does.
+**Limitations:** these tests show association, not causation. The data is a single coursework sample, so results may not generalise to the wider market. Statistical significance does not measure how large an effect is, so effect sizes should be read alongside the p-values.
 
-Finding 4: Regional income gaps show up in the data. Mumbai salaries came in significantly higher than Delhi's (p = 0.00024), and that maps to premium-tier representation by city.
+The full test log is in the notebook and is summarised in the report.
 
-Full test log (18 hypothesis tests: t-tests, ANOVA, chi-square) is in the notebook and summarized in the report.
+## Repository structure
 
-## Repo structure
-
-notebooks/ holds the Python analysis: cleaning, EDA, hypothesis testing (Pandas, SciPy, Seaborn).
-tableau/ holds the .twbx workbook: 2 dashboards, 15 worksheets, 12-point storyboard.
-report/ holds the full write-up: methodology, findings, business recommendations.
+```
+smartphone-market-analytics/
+├── data/          Data dictionary (dataset not included)
+├── notebooks/     Python analysis: cleaning, EDA, hypothesis testing
+├── tableau/       .twbx workbook: 2 dashboards, 15 worksheets, storyboard
+├── report/        Full write-up: methodology, findings, recommendations
+├── requirements.txt
+└── README.md
+```
 
 ## Tools
 
-Python (Pandas, NumPy, Matplotlib, Seaborn, SciPy), Jupyter, Tableau Desktop.
+Python (Pandas, NumPy, SciPy, Matplotlib, Seaborn), Jupyter Notebook, Tableau Desktop / Tableau Public.
 
 ## Reproducing the analysis
 
-Supply your own cellphone_data.csv in data/ (see "What this is" above), then run pip install -r requirements.txt and jupyter notebook notebooks/.
-
-Open tableau/smartphone_market_analytics.twbx in Tableau Desktop (or Tableau Public) for the dashboards and storyboard.
+1. Place your own `cellphone_data.csv` in `data/`, using the schema in `data/README.md`.
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the notebook: `jupyter notebook notebooks/`
+4. Open `tableau/smartphone_market_analytics.twbx` in Tableau Desktop or Tableau Public.
 
 ## Status
 
-Coursework project, submitted for MBA Semester 3. Not maintained as production code; treat it as a snapshot of the analysis, not a live tool.
+Coursework project, submitted for MBA Semester 3. It is a snapshot of the analysis, not maintained production code.
+
+## Author
+
+**Shamanth Adiga Umesh**, MBA candidate in Data Science & Analytics, Bengaluru.
+[LinkedIn](https://linkedin.com/in/shamanth-adiga-umesh-286b45214) | [GitHub](https://github.com/meshamanthadiga004)
+
+## License
+
+Released under the MIT License. See `LICENSE`.
